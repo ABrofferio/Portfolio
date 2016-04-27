@@ -6,5 +6,5 @@ def howOld():
     days = age * 365
     minutes = age * 852948
     seconds = age * 31556926
-    print (name+ "has been alive for a shocking "+ str(days)+ " days " +str(minutes)+ " minutes and "+ str(seconds)+ " seconds! Holy Toledo!")
+    print (name+ " has been alive for a shocking "+ str(days)+ " days " +str(minutes)+ " minutes and "+ str(seconds)+ " seconds! Holy Toledo!")
 howOld()
