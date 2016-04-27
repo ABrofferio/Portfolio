@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# Added the shebang line above to allow the user to make it executable 
+# by doing chmod +x BasicPyGame.py
 import time
 
 apples = 0
