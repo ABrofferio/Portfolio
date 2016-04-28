@@ -9,7 +9,26 @@ class windowClass(wx.Frame):
         menuBar = wx.MenuBar()
         fileButton = wx.Menu()
         editButton = wx.Menu()
-        exitItem = fileButton.Append(wx.NewId(), 'Exit', 'status')
+        #import will be a submenu under File
+        importItem = wx.Menu()
+
+        importItem.Append(wx.ID_ANY, 'Import Document')
+        importItem.Append(wx.ID_ANY, 'Import Picture')
+        importItem.Append(wx.ID_ANY, 'Import Video')
+
+        fileButton.AppendMenu(wx.ID_ANY,'Import', importItem)
+
+        toolBar = self.CreateToolBar()
+        quitToolButton = toolBar.AddLabelTool(wx.ID_ANY, 'Quit',wx.Bitmap('Image.png'))
+
+        toolBar.Realize()
+        self.Bind(wx.EVT_TOOL, self.Quit, quitToolButton)
+        
+        #exitItem = fileButton.Append(wx.NewId(), 'Exit', 'status')
+        exitItem = wx.MenuItem(fileButton, wx.NewId, 'Exit')
+        exitItem.SetBitmap(wx.Bitmap('Iamge.png'))
+        fileButton.AppendItem(exitItem)
+        
         menuBar.Append(fileButton, 'File')
         menuBar.Append(editButton, 'Edit')
         self.SetMenuBar(menuBar)
